@@ -66,7 +66,9 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
               ),
               key: Key(article.id.toString()),
               direction: DismissDirection.endToStart,
-              onDismissed: (direction) {},
+              onDismissed: (direction) {
+                bookmarkController.toggleBookmark(article.id);
+              },
               child: GestureDetector(
                 onTap: () => Navigator.push(
                   context,
